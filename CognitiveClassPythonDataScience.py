@@ -110,4 +110,33 @@ B = A[:]
 A[0] = "hard rock"
 help(A)
 
-# 
+# sets
+Set1 = {"pop","rock","soul","hard rock","rock","R&B","rock","disco"}
+print(Set1)
+L = ["Michael Jackson", 10.1, 1982]
+set(L)
+
+A = {"Thriller","Back in Black","AC/DC"}
+A.add("NSYNC")
+print(A)
+A.remove("NSYNC")
+print(A)
+print("AC/DC" in A)
+print("Who" in A)
+
+album_set_1 = {"Thriller","Back in Black","AC/DC"}
+album_set_2 = {"The Dark Side of the Moon","Back in Black","AC/DC"}
+album_set_3 = album_set_1 & album_set_2
+print(album_set_3)
+print(album_set_1.union(album_set_2))
+print(album_set_3.issubset(album_set_1))
+
+# dictionaries
+albums_year = {"Thriller":"1982","The Dark Side of the Moon":"1973","Back in Black":"1980"}
+print(albums_year["Thriller"])
+del(albums_year["Thriller"])
+albums_year["Thriller"] = "1982"
+"Thriller" in albums_year
+"1990" in albums_year
+albums_year.keys()
+albums_year.values()
