@@ -140,3 +140,36 @@ albums_year["Thriller"] = "1982"
 "1990" in albums_year
 albums_year.keys()
 albums_year.values()
+
+# conditions and branching
+a = 6
+a == 7
+a == 6
+
+i = 7
+i > 5
+i < 6
+i!=6
+"AC/DC"=="Michael Jackson"
+"AC/DC"!="Michael Jackson"
+
+age = 21
+if(age >18):
+    print("you can enter")
+elif(age == 18):
+    print("go see Pynk Floyd")
+else:
+    print("go see meat loof")
+print("move on")
+
+album_year = 1990
+if(album_year < 1980) or (album_year > 1989):
+    print("The Album was made in the 70's or 90's")
+else:
+    print("The Album was made in the 1980's")
+    
+album_year = 1983
+if(album_year > 1979) and (album_year < 1990):
+    print("The Album was made in the 1980's")
+    
+# 
