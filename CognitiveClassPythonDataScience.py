@@ -172,4 +172,207 @@ album_year = 1983
 if(album_year > 1979) and (album_year < 1990):
     print("The Album was made in the 1980's")
     
-# 
+# loops
+print(range(3))
+print(range(10,15))
+
+squares = ["red","yellow","green","purple","blue"]
+for i in range(0,5):
+    squares[i] = "white"
+    
+squares = ["red","yellow","green"]
+for square in squares:
+    print(square)
+    
+squares = ["red","yellow","green"]
+for i,square in enumerate(squares):
+    print(square)
+    print(i)
+    
+squares = ["orange","orange","purple","blue"]
+Newsquares = []
+i = 0
+while(squares[i]=="orange"):
+    Newsquares.append(squares[i])
+    i=i+1
+    
+# functions
+album_ratings = [10.0,8.5,9.5,7.0,7.0,9.5,9.0,9.5]
+L = len(album_ratings)
+print(L)
+
+S = sum(album_ratings)
+print(S)
+
+#   --ordered but not changed
+SS = sorted(album_ratings)
+print(SS)
+#--ordered with changed
+album_ratings.sort()
+print(album_ratings)
+#--making functions
+def add1(a):
+    b=a+1
+    return b
+
+add1(5)
+
+c = add1(10)
+print(c)
+
+d = add1(8)
+print(d)
+
+def add11(a):
+    """add 1 to a"""
+    b=a+1
+    return b
+
+help(add11)
+
+def Mult(a,b):
+    c=a*b
+    return c
+
+Mult(5,5)
+Mult(10,3.14)
+Mult(2,"Michael Jackson ")
+
+def MJ():
+    print("Michael Jackson")
+    
+MJ()
+
+def NoWork():
+    pass
+
+print(NoWork())
+
+def add111(a):
+    b=a+1;
+    print(a,"plus 1 equals",b)
+    return b
+
+add111(2)
+
+def printStuff(Stuff):
+    for i,s in enumerate(Stuff):
+        print("Album",i,"Rating is",s)
+        
+album_ratings = [10.0,8.5,9.5]
+printStuff(album_ratings)
+
+def ArtistNames(*names):
+    for name in names:
+        print(name)
+        
+ArtistNames("Michael Jackson","AC/DC","Pink Floyd")
+ArtistNames("Michael Jackson","AC/DC")
+
+def AddDC(y):
+    x=x+"DC"
+    print(x)
+    return(x)
+    
+x = "AC"
+z = AddDC(x)
+print(z)
+
+def Thriller():
+    Date=1982
+    return Date
+
+Thriller()
+Date
+
+def Thriller1():
+    Date1=1982
+    return(Date1)
+    
+Date1 = 2017
+
+print(Thriller1())
+print(Date1)
+
+def ACDC(y):
+    print(Rating)
+    return(Rating+y)
+    
+Rating = 9
+Z = ACDC(1)
+print(Z)
+print(Rating)
+
+def PinkFloyd():
+    global ClaimedSales
+    ClaimedSales =  "45 million"
+    return ClaimedSales
+
+PinkFloyd()
+print(ClaimedSales)
+
+# objects and classes
+class Circle(object):
+    def __init__(self,radius,color):
+        self.radius = radius
+        self.color = color
+        
+    def add_radius(self,r):
+        self.radius = self.radius + r
+
+class Rectangle(object):
+    def __init__(self,color,height,width):
+        self.color = color
+        self.height = height
+        self.width = width
+        
+C1 = Circle(10,"Red")
+C1.radius
+C1.color = "Blue"
+C1.color
+C1.radius
+dir(Circle)
+
+# reading files with open - r for reading, w for writing and a for appending
+File = open("/File.txt","r")
+File.name
+File.mode
+File.close()
+
+with open("File.txt","r") as File:
+    file_stuff = File.read()
+    print(file_stuff)
+print(File.closed)
+print(file_stuff)
+file_stuff
+
+with open("File.txt","r") as File:
+    print(File.read(4))
+
+with open("File.txt","r") as File:
+    file_stuff = File.readlines()
+    print(file_stuff)
+    
+with open("File.txt","r") as File:
+    file_stuff = File.readline()
+    print(file_stuff)
+    
+with open("File.txt","r") as File:
+    file_stuff = File.readline()
+    print(file_stuff)
+    file_stuff = File.readline()
+    print(file_stuff)
+    
+with open("File.txt","r") as File:
+    for line in File:
+        print(line)
+    
+with open("File.txt","r") as File:
+    file_stuff = File.readlines(4)
+    print(file_stuff)
+    
+with open("File.txt","r") as File:
+    print(File.read(4))
+    print(File.read(4))
+    print(File.read(7))
+    print(File.read(15))
