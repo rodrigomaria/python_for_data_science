@@ -204,12 +204,14 @@ print(L)
 S = sum(album_ratings)
 print(S)
 
-#   --ordered but not changed
+#--ordered but not changed
 SS = sorted(album_ratings)
 print(SS)
+
 #--ordered with changed
 album_ratings.sort()
 print(album_ratings)
+
 #--making functions
 def add1(a):
     b=a+1
@@ -334,7 +336,7 @@ C1.radius
 dir(Circle)
 
 # reading files with open - r for reading, w for writing and a for appending
-File = open("/File.txt","r")
+File = open("File.txt","r")
 File.name
 File.mode
 File.close()
@@ -376,3 +378,157 @@ with open("File.txt","r") as File:
     print(File.read(4))
     print(File.read(7))
     print(File.read(15))
+
+# writing files with open
+File1 = open("File1.txt","w")
+
+with open("File1.txt","w") as File1:
+    File1.write("This is a line A\n")
+    File1.write("This is a line B\n")
+    
+Lines = ["This is a line A\n","This is a line B\n","This is a line C\n"]
+with open("File1.txt","w") as File1:
+    for line in Lines:
+        File1.write(line)
+        
+with open("/File1.txt","a") as File1:
+    File1.write("This is a line C\n")
+    
+with open("Example1.txt","r") as readfile:
+    with open("Example3.txt","w") as writefile:
+        for line in readfile:
+            writefile.write(line)
+            
+# loading data with Pandas
+import pandas as pd
+csv_path = 'file1.csv'
+df = pd.read_csv(csv_path)
+df.head()
+
+import pandas as pd
+xlsx_path = 'file1.xlsx'
+df = pd.read_excel(xlsx_path)
+df.head()
+
+y = df[['First Name']]
+y = df[['First Name','Last Name','Gender']]
+
+df.iloc[0,1]
+df.loc[1,'First Name']
+
+y = df.iloc[0:2,0:3]
+
+numbers = {'num':[1,2,3,4,5,6,7,8,9,10]}
+numbers_frame = pd.DataFrame(numbers)
+
+# working with and saving data with Pandas
+import pandas as pd
+xlsx_path = 'file1.xlsx'
+df = pd.read_excel(xlsx_path)
+df.head()
+
+df['Country'].unique()
+df['Age']>40
+df1=df[df['Age']>40]
+df1.to_csv('newCSV.csv')
+
+# numpy 1d arrays
+import numpy as np
+a = np.array([0,1,2,3,4])
+
+print(a)
+type(a)
+print(a.dtype)
+print(a.size)
+print(a.ndim)
+print(a.shape)
+
+# access and slicing
+b = np.array([3.1,11.02,6.2,213.2,5.2])
+print(b)
+type(b)
+print(b.dtype)
+
+c = np.array([20,1,2,3,4])
+print(c)
+print(c[0])
+c[0] = 100
+print(c[0])
+print(c)
+c[4] = 0
+print(c)
+d = c[1:4]
+print(d)
+c[3:5] = 300,400
+print(c)
+
+#--basic operations
+#--traditional mode
+u = [1,0]
+v = [1,0]
+z = []
+
+for n,m in zip(u,v):
+    z.append(n+m)
+    
+print(z)
+
+#--using numpy
+u = np.array([1,0])
+v = np.array([0,1])
+z = u + v
+print(z)
+
+z = u - v
+print(z)
+
+y = np.array([1,2])
+z = 2*y
+print(z)
+
+#--product of two numpy arrays
+u = np.array([1,2])
+v = np.array([3,2])
+z = u*v
+print(z)
+
+#--dot product
+u = np.array([1,2])
+v = np.array([3,1])
+result = np.dot(u,v)
+print(result)
+
+#--adding constant to an numpy Array
+u = np.array([1,2,3,-1])
+z = u+1
+print(z)
+
+#--universal functions
+a = np.array([1,-1,1,-1])
+mean_a = a.mean()
+print(mean_a)
+
+b = np.array([1,-2,3,4,5])
+max_b = b.max()
+print(max_b)
+
+print(np.pi)
+
+x = np.array([0,np.pi/2,np.pi])
+print(x)
+
+y = np.sin(x)
+print(y)
+
+np.linspace(-2,2,num=5)
+np.linspace(-2,2,num=9)
+
+#--plotting mathematical functions
+x = np.linspace(0,2*np.pi,100)
+print(x)
+
+y = np.sin(x)
+print(y)
+
+import matplotlib.pyplot as plt
+plt.plot(x,y)
